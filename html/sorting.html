@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Algorithms - AlgoMaster</title>
+   <link rel="stylesheet" href="../style/sorting.css">
+</head>
+<body>
+
+    <header>
+        <h1>Sorting Algorithms</h1>
+        <p style="color: #94a3b8;">সিলেক্ট করুন কোন সর্টিং অ্যালগরিদমটি আপনি ভিজ্যুয়ালাইজ করতে চান</p>
+        <a href="../index.html" class="back-link">← Back to Dashboard</a>
+    </header>
+
+    <div class="container sorting-container">
+        <div class="card card-small" onclick="location.href='visualizers/bubble.html'">
+            <span class="tag">O(n²)</span>
+            <h3>Bubble Sort</h3>
+            <p>পাশাপাশি এলিমেন্ট তুলনা করে বড় এলিমেন্টকে শেষে পাঠায়।</p>
+            <div class="btn btn-small">Visualize Bubble</div>
+        </div>
+
+        <div class="card card-small">
+            <span class="tag">O(n²)</span>
+            <h3>Selection Sort</h3>
+            <p>সবচেয়ে ছোট এলিমেন্ট খুঁজে বের করে শুরুতে নিয়ে আসে।</p>
+            <div class="btn btn-small">Visualize Selection</div>
+        </div>
+
+        <div class="card card-small">
+            <span class="tag">O(n²)</span>
+            <h3>Insertion Sort</h3>
+            <p>একটি একটি করে এলিমেন্ট নিয়ে সঠিক জায়গায় ইনসার্ট করে।</p>
+            <div class="btn btn-small">Visualize Insertion</div>
+        </div>
+
+        <div class="card card-small">
+            <span class="tag">O(n log n)</span>
+            <h3>Merge Sort</h3>
+            <p>অ্যারে ভাগ করে সর্ট করার পর আবার জোড়া দেয় (Divide & Conquer)।</p>
+            <div class="btn btn-small">Visualize Merge</div>
+        </div>
+
+        <div class="card card-small">
+            <span class="tag">O(n log n)</span>
+            <h3>Quick Sort</h3>
+            <p>পিভট এলিমেন্ট ধরে ছোট ও বড় অংশকে আলাদা করে সর্ট করে।</p>
+            <div class="btn btn-small">Visualize Quick</div>
+        </div>
+
+        <div class="card card-small">
+            <span class="tag">O(n log n)</span>
+            <h3>Heap Sort</h3>
+            <p>বাইনারি হিপ ডেটা স্ট্রাকচার ব্যবহার করে সর্ট করে।</p>
+            <div class="btn btn-small">Visualize Heap</div>
+        </div>
+    </div>
+
+    <script src="script/sorting.js"></script>
+</body>
+</html>

@@ -7,7 +7,8 @@
 }
 
 * {
-  box-sizing: border-box; /* padding যেন উইডথ নষ্ট না করে */
+  box-sizing: border-box;
+  user-select: none; /* padding যেন উইডথ নষ্ট না করে */
 }
 
 body {
