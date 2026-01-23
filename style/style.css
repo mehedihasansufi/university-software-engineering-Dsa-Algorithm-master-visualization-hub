@@ -1,148 +1,71 @@
 :root {
-  --bg: #0f172a;
-  --card-bg: #1e293b;
-  --primary: #4f46e5;
-  --accent: #0ea5e9;
-  --text: #f8fafc;
+  --text: #171814;
+--background: #fdfff3;
+--primary: #ddf807;
+--secondary: #75befb;
+--accent: #6f4afa;
+  --text-hover:#A2A4A0;
 }
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  user-select: none; /* padding যেন উইডথ নষ্ট না করে */
 }
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--bg);
-  color: var(--text);
-  margin: 0;
+  background-color: var(--background);
+  color:var(--text);
+  width: 95%;
+  margin: auto;
+}
+/* common style here */
+.header{
+  font-size: xx-large;
+  
+}
+.paragraph{
+  font-size: large;
+}
+
+nav {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-}
-
-header {
-  width: 100%;
-  padding: 40px 20px; /* মোবাইলের জন্য সাইডে প্যাডিং */
-  text-align: center;
-  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-  border-bottom: 1px solid #334155;
-}
-
-header h1 {
-  font-size: clamp(1.8rem, 5vw, 3rem); /* রেসপনসিভ ফন্ট সাইজ */
-  margin: 0;
-  letter-spacing: 2px;
-  background: linear-gradient(to right, #818cf8, #38bdf8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-header p {
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
-  color: #94a3b8;
-  margin-top: 10px;
-}
-
-.container {
-  max-width: 1200px;
-  width: 95%; /* মোবাইলে দুই পাশে সামান্য গ্যাপ রাখার জন্য */
-  display: grid;
-  /* অটোমেটিক স্ক্রিন অনুযায়ী কলাম সংখ্যা ঠিক করবে */
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
-  gap: 20px;
-  padding: 40px 0;
-}
-
-/* Algorithm Cards */
-.card {
-  background-color: var(--card-bg);
-  border: 1px solid #334155;
-  border-radius: 15px;
-  padding: 25px;
-  text-align: center;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-  text-decoration: none;
-  color: var(--text);
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  height: 100%; /* সব কার্ডের হাইট সমান রাখার জন্য */
+  padding: 2.5rem 3rem;
+}
+li{
+  list-style: none;
+}
+.header-about ul{
+  display: flex;
+  gap: 2.5rem;
+}
+.header-about ul li a {
+  
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+  text-decoration: none;
+  color: rgba(23, 24, 20,0.8); 
+  font-weight: 550;
+  transition: color 0.3s ease; /
+}
+.header-about ul li a:hover {
+  color: var(--text-hover)
 }
 
-.card:hover {
-  transform: translateY(-8px);
-  border-color: var(--primary);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-}
-
-.card h3 {
-  font-size: 1.4rem;
-  margin: 10px 0;
-  color: var(--accent);
+.logo-color{
+  color: #BCBEB8;
 }
 
 
+/* heor section */
 
 
-
-
-
-.card p {
-  font-size: 0.9rem;
-  color: #94a3b8;
-  margin-bottom: 20px;
-  flex-grow: 1; /* টেক্সট কম হলেও বাটন নিচে থাকবে */
-}
-
-.btn {
-  background-color: var(--primary);
-  padding: 12px;
-  border-radius: 8px;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  letter-spacing: 1px;
-  transition: background 0.2s ease;
-}
-
-.card:hover .btn {
-  background-color: #4338ca;
-}
-
-/* Category Labels */
-.tag {
-  font-size: 0.65rem;
-  background: #334155;
-  padding: 4px 12px;
-  border-radius: 20px;
-  align-self: center;
-  margin-bottom: 10px;
-  color: #818cf8;
-  font-weight: 600;
-}
-
-/* --- Responsive Adjustments --- */
-
-/* ট্যাবলেট এবং বড় মোবাইলের জন্য (৭৬৮ পিক্সেল এর নিচে) */
-@media (max-width: 768px) {
-  .container {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 15px;
-  }
-  header {
-    padding: 30px 15px;
-  }
-}
-
-/* একদম ছোট মোবাইলের জন্য (৪৮০ পিক্সেল এর নিচে) */
-@media (max-width: 480px) {
-  .container {
-    grid-template-columns: 1fr; /* এক কলামে কার্ডগুলো আসবে */
-  }
-  .card {
-    padding: 20px;
-  }
+.hero-section{
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: .8rem;
 }
