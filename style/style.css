@@ -139,5 +139,73 @@ border-color:var(--secondary);
 
 .btn:hover{
   background-color:#F0F2E8 ;
+  background:linear-gradient(130deg, #D2E5ED 40%,#A4D2F4 100%);
   border: 2px solid #75BEFB;
+}
+
+
+/* real life */
+
+.real-life{
+margin-top: 10.5rem;
+text-align: center;
+}
+
+.real-life-container{
+  text-align: left;
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 4.2rem;
+}
+
+.real-life-contain{
+  background-color: #0514080D;
+  padding: 2.2rem;
+  border-radius: 12px;
+}
+
+.real-life-container ul{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.2rem;
+}
+
+.real-life-logo-color{
+  color:#593EC1
+  
+}
+
+
+/* learning */
+
+.learning{
+  text-align: center;
+  margin-top: 3.5rem;
+}
+
+
+/* blog header */
+.blog{
+  margin-top: 3.5rem;
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(300px,1fr));
+  gap: .5rem;
+
+}
+.blog-card{
+  width: 90%;
+  margin: auto;
+  gap: 1.2rem;
+  text-align: justify;
+}
+.blog-header{
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.blog-paragraph{
+  font-size: 1.1rem;
+  line-height: 1.7;
 }
