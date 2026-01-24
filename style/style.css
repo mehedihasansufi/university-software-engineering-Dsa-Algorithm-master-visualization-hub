@@ -1,7 +1,7 @@
 :root {
   --text: #171814;
   --background: #fdfff3;
-  --primary: #ddf807;
+  --primary: rgb(221, 248, 7);
   --secondary: #75befb;
   --accent: #6f4afa;
   --text-hover: #A2A4A0;
@@ -26,10 +26,32 @@ body {
   font-size: xx-large;
 
 }
-
+.heading{
+  font-size: 1.4rem;
+}
 .paragraph {
   font-size: 1.2rem;
 }
+.text-center{
+  text-align: center;
+}
+
+.heading-color {
+  background: linear-gradient(135deg, var(--secondary) 35%, var(--text) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* সেন্টার করার আসল দাওয়াই */
+  display: table;      /* এটি টেক্সটকে তার নিজের সাইজে রাখবে */
+  margin: 0 auto;      /* টেবিল এলিমেন্টকে মাঝখানে আনার সবচেয়ে সহজ উপায় */
+  text-align: center;
+}
+ 
+
+
+/*  */
+
 
 nav {
   display: flex;
@@ -159,7 +181,7 @@ li {
 /* real life */
 
 .real-life {
-  margin-top: 10.5rem;
+  margin-top: 5.5rem;
   text-align: center;
 }
 
@@ -192,13 +214,53 @@ li {
 /* learning */
 
 .learning {
-  text-align: center;
-  margin-top: 3.5rem;
+  width: 80%;
+  margin-top: 5.5rem;
+  margin: 5.5rem auto 0 auto;
   background-color: rgba(117, 190, 251, 0.2);
+  border-radius: 10px;
+ 
+  padding: 2rem 1.5rem;
+}
+
+.learning-heading-color {
+  background: linear-gradient(135deg, var(--secondary) 25%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  
+  display: table;      /* এটি টেক্সটকে তার নিজের সাইজে রাখবে */
+  margin: 0 auto;      /* টেবিল এলিমেন্টকে মাঝখানে আনার সবচেয়ে সহজ উপায় */
+  text-align: center;
 }
 
 
+.learning-contain{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 3.2rem;
+  margin-top: 2.2rem;
+}
+
+.learning-card{
+  text-align: justify;
+  font-size: 1.1rem;
+  background-color: rgba(117, 190, 251, 0.2);
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+
+.learning-card:hover{
+   background-color: rgba(117, 190, 251, 0.4);
+}
+
 /* blog header */
+
+.blog-section{
+  margin-top: 5.5rem;
+}
 .blog {
   margin-top: 3.5rem;
   display: grid;
@@ -215,7 +277,7 @@ li {
 }
 
 .blog-header {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-align: center;
 }
 
@@ -224,7 +286,27 @@ li {
   line-height: 1.7;
 }
 
+@media screen and (max-width:680px) and (min-width:576px) {
 
+
+  .card {
+    padding: 2rem .9rem;
+
+  }
+
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  
+  }
+
+.learning-contain{
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  gap: 3.2rem;
+  margin-top: 2.2rem;
+}
+
+}
 
 @media screen and (max-width:576px) {
   .menu-btn {
@@ -239,7 +321,7 @@ li {
     display: flex;
     justify-content: space-between;
     padding: 2.5rem .3rem;
-    align-items: center;
+
   }
 
   .header-about ul li:nth-child(1) {
@@ -272,4 +354,31 @@ li {
     max-height: 300px;
     padding: 1rem 0;
   }
+
+.real-life-container {
+  flex-direction: column;
+  gap: 2.2rem;
+}
+
+.real-life-contain{
+  width: 80%;
+  margin: auto;
+}
+
+.blog {
+  margin-top: 3.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.9rem;
+
+}
+
+.learning{
+  font-size: 1.2rem;
+}
+
+
+.learning-contain{
+  grid-template-columns: repeat(1,1fr);
+}
 }
