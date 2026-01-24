@@ -33,14 +33,22 @@ body {
 
 nav {
   display: flex;
-  justify-content: space-between;
+justify-content: space-between;
   padding: 2.5rem 3rem;
+  align-items: center;
 }
 
 li {
   list-style: none;
 }
 
+
+
+.menu-btn{
+  display: none;
+  cursor: pointer;
+ 
+}
 .header-about ul {
   display: flex;
   gap: 2.5rem;
@@ -76,6 +84,9 @@ li {
   flex-direction: column;
   gap: .8rem;
 }
+
+
+
 
 
 /* main section */
@@ -183,6 +194,7 @@ text-align: center;
 .learning{
   text-align: center;
   margin-top: 3.5rem;
+  background-color: rgba(117, 190, 251,0.2) ;
 }
 
 
@@ -208,4 +220,47 @@ text-align: center;
 .blog-paragraph{
   font-size: 1.1rem;
   line-height: 1.7;
+}
+
+
+
+@media screen and (max-width:576px) {
+ .menu-btn{
+  display: block;
+  z-index: 10001;
+}
+
+
+nav{
+ 
+  align-items: flex-start;
+}
+.header-about ul li:nth-child(1){
+ 
+  margin-top: 1.5rem;
+}
+
+#cross{
+  display: none;
+}
+.header-about ul {
+  gap: 1.5rem;
+}
+.nav-links {
+    display: flex;
+    flex-direction: column;
+   
+    width: 100%;
+   
+   
+    max-height: 0; 
+    overflow: hidden;
+    transition: all 0.5s ease; 
+  }
+
+  
+  .nav-links.show-menu {
+    max-height: 300px; 
+    padding: 1rem 0;
+  }
 }
