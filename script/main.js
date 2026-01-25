@@ -13,3 +13,17 @@ cross.addEventListener("click", () => {
     menu.style.display = "block";
     cross.style.display = "none";
 });
+
+
+
+// click to next page
+
+
+const sorting=document.getElementById("sorting-btn")
+
+
+
+
+sorting.addEventListener("click", ()=>{
+    window.location.href="../sorting/sorting.html"
+})
