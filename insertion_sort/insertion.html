@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>nodePath | Insertion Sort Visualizer</title>
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> -->
+  <link rel="stylesheet" href="./insertion.css">
+</head>
+<body>
+
+<!-- FIXED HEADER -->
+<header>
+  <nav>
+    <div class="logo"><h2>node<span class="logo-color">P</span>ath</h2></div>
+    <div class="header-about">
+      <div class="menu-btn" id="menuBtn">&#9776;</div>
+      <ul id="navLinks">
+        <li><a href="">About Us</a></li>
+        <li><a href="">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<!-- MAIN -->
+<main>
+  <h1 class="page-title">Insertion Sort Visualizer</h1>
+  <p class="page-sub">ধাপে ধাপে দেখো কীভাবে Insertion Sort কাজ করে 🔍</p>
+
+  <!-- Controls -->
+  <div class="control-panel">
+    <div class="control-row">
+
+      <div class="ctrl-group" style="max-width:130px;">
+        <label><i class="fa fa-hashtag"></i> Array Size</label>
+        <input type="number" id="sizeInput" min="2" max="10" value="6"/>
+        <span class="hint">সর্বোচ্চ ১০</span>
+      </div>
+
+      <div class="ctrl-group">
+        <label><i class="fa fa-list-ol"></i> Values <span style="font-weight:400;color:#A2A4A0">(comma দিয়ে আলাদা করো)</span></label>
+        <input type="text" id="valInput" placeholder="যেমন: 5, 3, 8, 1, 9, 4  —  খালি রাখলে random হবে"/>
+      </div>
+
+      <div class="ctrl-group" style="max-width:170px;">
+        <label><i class="fa fa-gauge-high"></i> Speed: <span id="speedLabel">Normal</span></label>
+        <input type="range" id="speedInput" min="1" max="5" value="3"/>
+      </div>
+
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-primary" id="buildBtn" onclick="buildArray()">
+        <i class="fa fa-wand-magic-sparkles"></i> Array তৈরি করো
+      </button>
+      <button class="btn btn-accent" id="startBtn" onclick="toggleAuto()" disabled>
+        <i class="fa fa-play" id="playIcon"></i> <span id="startLabel">Auto Sort</span>
+      </button>
+      <button class="btn btn-yellow" id="stepBtn" onclick="stepSort()" disabled>
+        <i class="fa fa-forward-step"></i> পরের ধাপ
+      </button>
+      <button class="btn btn-primary" id="resetBtn" onclick="resetAll()" disabled>
+        <i class="fa fa-rotate-left"></i> Reset
+      </button>
+    </div>
+  </div>
+
+  <!-- Legend -->
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot dot-default"></div>Unsorted</div>
+    <div class="legend-item"><div class="legend-dot dot-key"></div>Key বেছে নেওয়া</div>
+    <div class="legend-item"><div class="legend-dot dot-compare"></div>Comparing</div>
+    <div class="legend-item"><div class="legend-dot dot-inserting"></div>Inserting</div>
+    <div class="legend-item"><div class="legend-dot dot-sorted"></div>Sorted ✓</div>
+  </div>
+
+  <!-- Visualizer -->
+  <div class="viz-container">
+    <div class="bars-area" id="barsArea">
+      <div style="color:#A2A4A0;font-size:.92rem;margin:auto;">⬆ আগে Array তৈরি করো</div>
+    </div>
+    <div class="step-msg" id="stepMsg">Array তৈরি করে Sort শুরু করো 🚀</div>
+  </div>
+
+  <!-- Bottom row -->
+  <div class="bottom-row">
+
+    <!-- Complexity -->
+    <div class="complexity-box">
+      <div class="complexity-card">
+        <div class="c-label">Best Case</div>
+        <div class="c-value">O(n)</div>
+        <div class="c-sub">Already sorted</div>
+      </div>
+      <div class="complexity-card">
+        <div class="c-label">Average / Worst</div>
+        <div class="c-value">O(n²)</div>
+        <div class="c-sub">Random / Reverse</div>
+      </div>
+      <div class="complexity-card">
+        <div class="c-label">Space</div>
+        <div class="c-value">O(1)</div>
+        <div class="c-sub">In-place</div>
+      </div>
+    </div>
+
+    <!-- Log -->
+    <div class="log-section">
+      <div class="log-title"><i class="fa fa-clipboard-list"></i> ধাপের ইতিহাস</div>
+      <div class="log-box" id="logBox">
+        <div class="log-entry" style="color:#A2A4A0;">এখনো কোনো ধাপ শুরু হয়নি...</div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- FIXED FOOTER -->
+<footer>
+  <div class="footer-bottom">
+    <span>&copy; 2026 nodePath</span>
+    <span class="sep">|</span>
+    <span>Designed with ❤️ for Learners</span>
+    <span class="sep">|</span>
+    <span>Developed by Mehedi Hasan</span>
+  </div>
+</footer>
+
+<script src="./insertion.js"></script>
+</body>
+</html>
