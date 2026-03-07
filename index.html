@@ -3,207 +3,116 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>nodePath|Dashboard</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-
-    <link rel="stylesheet" href="style/style.css" />
+    <title>nodePath | Login</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> -->
+   <link rel="stylesheet" href="./style/index.css">
   </head>
   <body>
+
+    <!-- Blobs -->
+    <div class="deco-blob deco-blob-1"></div>
+    <div class="deco-blob deco-blob-2"></div>
+    <div class="deco-blob deco-blob-3"></div>
+
+    <!-- HEADER -->
     <header>
       <nav>
         <div class="logo">
           <h2>node<span class="logo-color">P</span>ath</h2>
         </div>
-
         <div class="header-about">
-            <div class="menu-btn">
-                <img id="menu" src="./assets/menu.svg" alt="">
-                <img id="cross" src="./assets/cross.svg" alt="">
-            </div>
-
-          <ul class="nav-links">
-            
+          <div class="menu-btn" id="menuBtn">
+            <span style="font-size:1.5rem;">&#9776;</span>
+          </div>
+          <ul class="nav-links" id="navLinks">
             <li><a href="">About Us</a></li>
             <li><a href="">Contact Us</a></li>
-            
           </ul>
         </div>
       </nav>
-
-      <div class="hero-section">
-        <h2 class="header">Algo<span class="logo-color">M</span>aster Hub</h2>
-        <p class="paragraph">সব ডেটা স্ট্রাকচার ও অ্যালগরিদম ভিজুয়ালাইজেশন এক জায়গায়</p>
-      </div>
     </header>
-<main>
-    
-    <div class="container">
-        <div class="card">
-            <span class="tag">Sorting</span>
-            <h3 class="card-heading">Sorting Algorithms</h3>
-            <p>Bubble, Selection, Insertion, Merge, Quick sort visualizations.</p>
-            <div id="sorting-btn" class="btn">Launch Sorting</div>
+
+    <!-- LOGIN -->
+    <div class="login-wrapper">
+      <div class="login-box">
+        <span class="login-tag">Welcome Back</span>
+
+        <h2 class="login-title">Algo<span class="logo-gray" style="-webkit-text-fill-color:#BCBEB8">M</span>aster Hub</h2>
+        <p class="login-subtitle">তোমার অ্যাকাউন্টে লগইন করো</p>
+
+        <div class="form-group">
+          <label for="email">ইমেইল</label>
+          <div class="input-wrap">
+            <i class="fa fa-envelope field-icon"></i>
+            <input type="email" id="email" placeholder="example@email.com" />
+          </div>
         </div>
 
-        <div class="card">
-            <span class="tag">Linear DS</span>
-            <h3 class="card-heading">Linked List</h3>
-            <p>Singly, Doubly, and Circular Linked List operations.</p>
-            <div class="btn">Visualize List</div>
+        <div class="form-group">
+          <label for="password">পাসওয়ার্ড</label>
+          <div class="input-wrap">
+            <i class="fa fa-lock field-icon"></i>
+            <input type="password" id="password" placeholder="••••••••" />
+            <span class="toggle-pass" id="togglePass">
+              <i class="fa fa-eye" id="eyeIcon"></i>
+            </span>
+          </div>
         </div>
 
-        <div class="card">
-            <span class="tag">Linear DS</span>
-            <h3>Stack & Queue</h3>
-            <p>LIFO and FIFO visualization with Push, Pop, Enqueue, Dequeue.</p>
-            <div class="btn">Launch Stack/Queue</div>
+        <div class="forgot-row">
+          <a href="#">পাসওয়ার্ড ভুলে গেছো?</a>
         </div>
 
-        <div class="card">
-            <span class="tag">Non-Linear DS</span>
-            <h3 class="card-heading">Binary Tree & Heap</h3>
-            <p>Tree traversals (BFS, DFS) and Heap operations.</p>
-            <div class="btn">Visualize Tree</div>
+        <button class="login-btn" onclick="handleLogin()">লগইন করো &rarr;</button>
+
+        <div class="divider">অথবা</div>
+
+        <div class="social-login">
+          <button class="social-btn">
+            <i class="fa-brands fa-google"></i> Google
+          </button>
+          <button class="social-btn">
+            <i class="fa-brands fa-github"></i> GitHub
+          </button>
         </div>
 
-        <div class="card">
-            <span class="tag">Graph</span>
-            <h3 class="card-heading">Graph Algorithms</h3>
-            <p>Explore BFS, DFS, and topological sorting.</p>
-            <div class="btn">Launch Graph</div>
+        <div class="signup-row">
+          অ্যাকাউন্ট নেই? <a href="./sign_up/sign_up.html">এখনই রেজিস্টার করো</a>
         </div>
-
-        <div class="card">
-            <span class="tag">Pathfinding</span>
-            <h3 class="card-heading">Dijkstra & Bellman</h3>
-            <p>Shortest path algorithms in weighted graphs.</p>
-            <div class="btn">Visualize Paths</div>
-        </div>
-
-        <div class="card">
-            <span class="tag">Optimization</span>
-            <h3 class="card-heading">Floyd Warshall</h3>
-            <p>All-pairs shortest path algorithm visualization.</p>
-            <div class="btn">Launch Floyd</div>
-        </div>
-    </div>
-
-
-    <section class="real-life">
-        <h2 class="heading heading-color">রিয়েল-লাইফ ইউজ কেস</h2>
-        <div class="real-life-container">
-            <div class="real-life-contain">
-                <ul>
-                    <li> <span class="real-life-logo-color">Graph Algorithms : </span> গুগল ম্যাপস বা উবারে লোকেশন খুঁজে বের করতে।</li>
-                    <li><span class="real-life-logo-color">Sorting:</span> ই-কমার্স সাইটে দাম বা রেটিং অনুযায়ী প্রোডাক্ট সাজাতে।</li>
-                </ul>
-            </div>
-            <div class="real-life-contain">
-                <ul>
-                    <li> <span class="real-life-logo-color">Stack:</span> ব্রাউজারের "Back" বাটনে কাজ করতে।</li>
-                    <li><span class="real-life-logo-color">Queue:</span> প্রিন্টারের কমান্ড বা মেসেজ পাঠানোর সিরিয়াল মেইনটেইন করতে।</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="learning">
-        <h2 class="heading text-center learning-heading-color">অ্যালগরিদম শেখার রোডম্যাপ</h2>
-
-        <div class="learning-contain">
-            <div class="learning-card">
-                <p>অ্যালগরিদম শেখার আগে যেকোনো একটি প্রোগ্রামিং ল্যাঙ্গুয়েজ (যেমন- C++, Java, বা Python) বেছে নিন। ডাটা স্ট্রাকচার বোঝার জন্য ল্যাঙ্গুয়েজের বেসিক লুপ, কন্ডিশন এবং ফাংশনগুলো ভালোভাবে জানা জরুরি। বিশেষ করে রিকারশন (Recursion) কনসেপ্টটা ক্লিয়ার করে নিন, কারণ বড় বড় অ্যালগরিদম রিকারশনের ওপর ভিত্তি করেই চলে।</p>
-            </div>
-
-            <div class="learning-card">
-                <p>প্রথমেই শিখুন অ্যারে (Array) এবং লিঙ্কড লিস্ট (Linked List)। এরপর বাস্তব জীবনের উদাহরণ দিয়ে স্ট্যাক (Stack) এবং কিউ (Queue) বুঝুন। এই বেসিক স্ট্রাকচারগুলো জানলে আপনি বুঝতে পারবেন কম্পিউটার কীভাবে ডাটা মেমোরিতে স্টোর করে। আমাদের ড্যাশবোর্ডের ভিজ্যুয়ালাইজেশন আপনাকে এই কানেকশনগুলো চোখের সামনে দেখতে সাহায্য করবে।</p>
-            </div>
-
-
-
-            <div class="learning-card">
-                <p>ডাটা তো রাখা হলো, এবার খোঁজার পালা। বাইনারি সার্চ (Binary Search) দিয়ে শুরু করুন এবং দেখুন কীভাবে মুহূর্তের মধ্যে কোটি কোটি ডাটা থেকে কাঙ্ক্ষিত তথ্য পাওয়া যায়। এরপর সর্টিং অ্যালগরিদমগুলো (যেমন- Merge Sort, Quick Sort) শিখুন। এটি আপনাকে কোডের টাইম কমপ্লেক্সিটি বা "কত দ্রুত কোড কাজ করে" তা বুঝতে শেখাবে।</p>
-            </div>
-
-
-
-              <div class="learning-card">
-                <p>যখন ডাটা আর লাইনে থাকে না, বরং জালের মতো ছড়িয়ে পড়ে, তখন প্রয়োজন হয় ট্রি (Tree) এবং গ্রাফ (Graph)। গুগল ম্যাপস বা ফেসবুকের ফ্রেন্ড সাজেশন কীভাবে কাজ করে তা বোঝার জন্য গ্রাফ ট্রাভার্সাল (BFS, DFS) শেখা বাধ্যতামূলক। এটি ডেটা স্ট্রাকচারের সবচেয়ে মজার এবং চ্যালেঞ্জিং পার্ট।</p>
-            </div>
-        </div>
-    </section>
-
-<section class="blog-section">
-     <h2 class="text-center heading heading-color">কেন অ্যালগরিদম শেখা আপনার সুপারপাওয়ার</h2>
-    <div class="blog">
-       
-        <div class="blog-card card">
-            <h2 class="blog-header ">বিশৃঙ্খলা থেকে শৃঙ্খলা (The Chaos)</h2>
-            <p class="blog-paragraph">কল্পনা করুন, একটি লাইব্রেরিতে হাজার হাজার বই অগোছালোভাবে পড়ে আছে। আপনাকে বলা হলো "Data Science" এর একটি বই খুঁজে বের করতে। আপনি যদি প্রতিটি বই একে একে চেক করেন, তবে আপনার সারা দিন লেগে যাবে। প্রোগ্রামিংয়ের ভাষায় একে বলা হয় $O(n)$ সময়</p>
-        </div>
-
-
-         <div class="blog-card card">
-            <h2 class="blog-header">অ্যালগরিদমের জাদু (The Magic)</h2>
-            <p class="blog-paragraph">এখন যদি বইগুলো বর্ণানুসারে সাজানো থাকে এবং আপনি Binary Search ব্যবহার করেন, তবে আপনি মাত্র কয়েক সেকেন্ডেই বইটি খুঁজে পাবেন। এটিই হলো অ্যালগরিদমের শক্তি। এটি শুধু কোড করা নয়, এটি হলো সবচেয়ে কম সময়ে এবং সবচেয়ে কম মেমরি ব্যবহার করে সমস্যার সমাধান করা।</p>
-        </div>
-
-
-
-         <div class="blog-card card">
-            <h2 class="blog-header">বাস্তব জীবনের নায়ক</h2>
-            <p class="blog-paragraph">আপনি যখন উবারে রাইড কল করেন, তখন Dijkstra's Algorithm পর্দার আড়ালে কাজ করে আপনাকে সবচেয়ে দ্রুততম রাস্তা খুঁজে দেয়। আপনি যখন ফেসবুকে স্ক্রল করেন, তাদের Sorting Algorithms ঠিক করে দেয় কোন পোস্টটি আপনি আগে দেখবেন।</p>
-        </div>
-
-         <div class="blog-card card">
-            <h2 class="blog-header">উপসংহার (The Conclusion)</h2>
-            <p class="blog-paragraph">অ্যালগরিদম শেখা মানে শুধু ইন্টারভিউ পাস করা নয়; এটি আপনার মস্তিষ্ককে এমনভাবে তৈরি করে যাতে আপনি যেকোনো বড় সমস্যাকে ছোট ছোট অংশে ভাগ করে সমাধান করতে পারেন। তাই আজই আপনার ভিজুয়ালাইজেশন যাত্রা শুরু করুন!</p>
-        </div>
-
-    </div>
-</section>
-</main>
-
-<footer>
-    
-    
-  <div class="footer-container">
-    <div class="footer-brand">
-      <h2>node<span class="logo-color">P</span>ath</h2>
-      <p>অ্যালগরিদম শিখুন ভিজ্যুয়ালাইজেশনের মাধ্যমে।</p>
-    </div>
-    <div class="footer-contain">
-        <div class="footer-links">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Roadmap</a></li>
-        <li><a href="#">Visualizer</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-social">
-      <h3>Follow Us</h3>
-      <div class="social-icons">
-        <a target="_blank" href="https://github.com/mehedihasansufi"><i class="fa-brands fa-github"></i></a>
-        <a target="_blank" href="https://instagram.com/mehedi_hasan_lipon"><i class="fa-brands fa-instagram"></i></a>
       </div>
     </div>
-    </div>
-  </div>
 
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-brand">
+          <h2>node<span class="logo-color">P</span>ath</h2>
+          <p>অ্যালগরিদম শিখুন ভিজ্যুয়ালাইজেশনের মাধ্যমে।</p>
+        </div>
+        <div class="footer-contain">
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Roadmap</a></li>
+              <li><a href="#">Visualizer</a></li>
+            </ul>
+          </div>
+          <div class="footer-social">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+              <a target="_blank" href="https://github.com/mehedihasansufi"><i class="fa-brands fa-github"></i></a>
+              <a target="_blank" href="https://instagram.com/mehedi_hasan_lipon"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 nodePath | Designed with ❤️ for Learners</p>
+        <p>Developed by || Mehedi Hasan</p>
+      </div>
+    </footer>
 
-
-
-
-
-
-  <div class="footer-bottom">
-    <p>&copy; 2026 nodePath | Designed with ❤️ for Learners</p>
-    <p>Developed by ||  Mehedi Hasan</p>
-  </div>
-</footer>
-    <script src="script/main.js"></script>
+    <script src="./script/index.js"></script>
   </body>
 </html>

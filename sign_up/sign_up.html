@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nodePath | Sign Up</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> -->
+  
+    <link rel="stylesheet" href="./sign_up.css">
+  </head>
+  <body>
+
+    <!-- Blobs -->
+    <div class="deco-blob deco-blob-1"></div>
+    <div class="deco-blob deco-blob-2"></div>
+    <div class="deco-blob deco-blob-3"></div>
+
+    <!-- HEADER -->
+    <header>
+      <nav>
+        <div class="logo">
+          <h2>node<span class="logo-color">P</span>ath</h2>
+        </div>
+        <div class="header-about">
+          <div class="menu-btn" id="menuBtn">
+            <span style="font-size:1.5rem;">&#9776;</span>
+          </div>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="">About Us</a></li>
+            <li><a href="">Contact Us</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- SIGNUP -->
+    <div class="signup-wrapper">
+      <div class="signup-box">
+
+        <span class="signup-tag">নতুন যাত্রা শুরু করো</span>
+        <h2 class="signup-title">Algo<span style="-webkit-text-fill-color:#BCBEB8">M</span>aster Hub</h2>
+        <p class="signup-subtitle">ফ্রি অ্যাকাউন্ট খুলে ভিজুয়ালাইজেশন শুরু করো</p>
+
+        <!-- Name Row -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">প্রথম নাম</label>
+            <div class="input-wrap">
+              <i class="fa fa-user field-icon"></i>
+              <input type="text" id="firstName" placeholder="রাফি" />
+              <i class="fa fa-check status-icon ok"></i>
+              <i class="fa fa-times status-icon err"></i>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="lastName">শেষ নাম</label>
+            <div class="input-wrap">
+              <i class="fa fa-user field-icon"></i>
+              <input type="text" id="lastName" placeholder="আহমেদ" />
+              <i class="fa fa-check status-icon ok"></i>
+              <i class="fa fa-times status-icon err"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Username -->
+        <div class="form-group">
+          <label for="username">ইউজারনেম</label>
+          <div class="input-wrap">
+            <i class="fa fa-at field-icon"></i>
+            <input type="text" id="username" placeholder="rafi_ahmed" />
+            <i class="fa fa-check status-icon ok"></i>
+            <i class="fa fa-times status-icon err"></i>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">ইমেইল</label>
+          <div class="input-wrap">
+            <i class="fa fa-envelope field-icon"></i>
+            <input type="email" id="email" placeholder="example@email.com" />
+            <i class="fa fa-check status-icon ok"></i>
+            <i class="fa fa-times status-icon err"></i>
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label for="password">পাসওয়ার্ড</label>
+          <div class="input-wrap">
+            <i class="fa fa-lock field-icon"></i>
+            <input type="password" id="password" placeholder="কমপক্ষে ৮ অক্ষর" oninput="checkStrength(this.value)" />
+            <span class="toggle-pass" id="togglePass1">
+              <i class="fa fa-eye" id="eyeIcon1"></i>
+            </span>
+          </div>
+          <div class="strength-bar"><div class="strength-fill" id="strengthFill"></div></div>
+          <div class="strength-label" id="strengthLabel"></div>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="form-group">
+          <label for="confirmPassword">পাসওয়ার্ড নিশ্চিত করো</label>
+          <div class="input-wrap">
+            <i class="fa fa-lock field-icon"></i>
+            <input type="password" id="confirmPassword" placeholder="পাসওয়ার্ড আবার দাও" />
+            <span class="toggle-pass" id="togglePass2">
+              <i class="fa fa-eye" id="eyeIcon2"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- Terms -->
+        <div class="terms-row">
+          <input type="checkbox" id="terms" />
+          <label for="terms">
+            আমি <a href="#">Terms of Service</a> এবং <a href="#">Privacy Policy</a> পড়েছি এবং সম্মত আছি।
+          </label>
+        </div>
+
+        <button class="signup-btn" id="signupBtn" onclick="handleSignup()">অ্যাকাউন্ট তৈরি করো &rarr;</button>
+
+        <div class="divider">অথবা</div>
+
+        <div class="social-login">
+          <button class="social-btn">
+            <i class="fa-brands fa-google"></i> Google দিয়ে
+          </button>
+          <button class="social-btn">
+            <i class="fa-brands fa-github"></i> GitHub দিয়ে
+          </button>
+        </div>
+
+        <div class="login-row">
+          আগে থেকেই অ্যাকাউন্ট আছে? <a href="../index.html">লগইন করো</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-brand">
+          <h2>node<span class="logo-color">P</span>ath</h2>
+          <p>অ্যালগরিদম শিখুন ভিজ্যুয়ালাইজেশনের মাধ্যমে।</p>
+        </div>
+        <div class="footer-contain">
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Roadmap</a></li>
+              <li><a href="#">Visualizer</a></li>
+            </ul>
+          </div>
+          <div class="footer-social">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+              <a target="_blank" href="https://github.com/mehedihasansufi"><i class="fa-brands fa-github"></i></a>
+              <a target="_blank" href="https://instagram.com/mehedi_hasan_lipon"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 nodePath | Designed with ❤️ for Learners</p>
+        <p>Developed by || Mehedi Hasan</p>
+      </div>
+    </footer>
+
+ <script src="./sign_up.js"></script>
+  </body>
+</html>
