@@ -26,15 +26,12 @@ main,header{
   margin: auto;
 }
 /* common style here */
-.header {
-  font-size: xx-large;
 
-}
 .heading{
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 }
 .paragraph {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 .text-center{
   text-align: center;
@@ -65,7 +62,7 @@ a{
 nav {
   display: flex;
   justify-content: space-between;
-  padding: 2.5rem 3rem;
+   padding: 1.5rem 1.5rem 0rem 1.5rem;
   align-items: center;
 }
 
