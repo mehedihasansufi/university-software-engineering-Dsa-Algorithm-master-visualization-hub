@@ -22,6 +22,6 @@
           return;
         }
         alert('লগইন সফল হয়েছে! ✅');
-        window.location.href="./home.html"
+        window.location.href="../index.html"
       }
   
