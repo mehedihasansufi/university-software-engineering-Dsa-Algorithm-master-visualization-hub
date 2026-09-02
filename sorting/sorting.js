@@ -5,5 +5,12 @@ btnInsertion.addEventListener("click",(event)=>{
 
 const btnBubble=document.getElementById("btn-bubble")
 btnBubble.addEventListener("click",(event)=>{
+    
     window.location.href="../bubble_sort/bubble.html"
+})
+
+const btnSelectionSort=document.getElementById("btn-selection-sort")
+btnSelectionSort.addEventListener("click",(event)=>{
+    
+    window.location.href="./selection_sort_algorithm/selection.html"
 })
